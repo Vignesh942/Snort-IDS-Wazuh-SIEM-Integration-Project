@@ -1,0 +1,32 @@
+cat << 'EOF' > /var/ossec/etc/rules/snort_rules.xml
+<group name="snort,ids,network">
+  
+  <rule id="100200" level="10">
+    <if_sid>20100,20101</if_sid>
+    <match>SNMP</match>
+    <description>Snort: SNMP reconnaissance attempt detected from $(data.srcip)</description>
+    <mitre>
+      <id>T1046</id>
+    </mitre>
+  </rule>
+
+  <rule id="100201" level="11">
+    <if_sid>20100,20101</if_sid>
+    <match>SCAN nmap</match>
+    <description>Snort: Nmap scan detected from $(data.srcip)</description>
+    <mitre>
+      <id>T1046</id>
+    </mitre>
+  </rule>
+
+  <rule id="100202" level="12">
+    <if_sid>20100,20101</if_sid>
+    <match>XMAS</match>
+    <description>Snort: XMAS scan detected from $(data.srcip)</description>
+    <mitre>
+      <id>T1046</id>
+    </mitre>
+  </rule>
+
+</group>
+EOF
