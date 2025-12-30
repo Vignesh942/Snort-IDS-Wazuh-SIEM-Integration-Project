@@ -58,7 +58,7 @@ This project integrates **Snort IDS** (Intrusion Detection System) with **Wazuh 
 │  │  - Forwards to Wazuh Manager                        │    │
 │  └─────────────────────────────────────────────────────┘    │
 │                                                              │
-│  IP: 192.168.43.134                                          │
+│                                                             │
 └──────────────────────────────────────────────────────────────┘
 ```
 
